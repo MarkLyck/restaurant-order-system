@@ -1,0 +1,10 @@
+#menu-view-container {
+  display: flex;
+  justify-content: space-between;
+  #menu-container {
+    width: 40%;
+  }
+  #order-container {
+    width: 40%
+  }
+}
