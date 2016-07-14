@@ -10,8 +10,8 @@ function renderOrderView() {
 
       </ul>
 
-      <p id="order-tax">TAX</p>
-      <h4 id="order-total">TOTAL</h4>
+      <p id="order-tax">Tax: ${sessionOrder.get('tax')}</p>
+      <h4 id="order-total">Total: ${sessionOrder.get('total')}</h4>
       <button id="order-now-btn" type="button" name="button">Order Now</button>
   `)
   let $orderList = $orderView.filter('#order-list')
@@ -34,6 +34,8 @@ function renderOrderView() {
     `)
     $orderItemLi.find('.order-delete').on('click', () => {
       sessionOrder.removeItem(item)
+      sessionOrder.calcTax()
+      sessionOrder.calcTotal()
     })
     $orderList.append($orderItemLi)
   })

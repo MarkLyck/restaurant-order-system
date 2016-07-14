@@ -47,6 +47,8 @@ function renderMenuView() {
         $catLi.find('.menu-items-container').append($menuLi)
         $menuLi.on('click', () => {
           sessionOrder.addItem(item)
+          sessionOrder.calcTax()
+          sessionOrder.calcTotal()
         })
       })
     })
