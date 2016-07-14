@@ -1,3 +1,44 @@
+header {
+  padding: 0 0 0 40px;
+  background-color: #c74848;
+  color: #fff; }
+  header nav {
+    display: flex;
+    justify-content: space-between; }
+    header nav #login-btn {
+      color: #fff;
+      padding: 20px;
+      background: #bc3a3a;
+      border: none; }
+      header nav #login-btn:hover {
+        background: #a83434; }
 
+#menu-view-container {
+  display: flex;
+  justify-content: space-between; }
+  #menu-view-container #menu-container {
+    width: 40%; }
+  #menu-view-container #order-container {
+    width: 40%; }
+
+#order-container #order-list .order-item {
+  display: flex; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+button, input {
+  outline: none; }
+
+button:hover {
+  cursor: pointer; }
+
+main {
+  padding: 0 40px; }
+
+footer {
+  padding: 0 40px; }
 
 /*# sourceMappingURL=main.css.map */
