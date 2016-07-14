@@ -2,6 +2,9 @@
   #order-list {
     .order-item {
       display: flex;
+      .hide-options {
+        display: none;
+      }
     }
   }
 }

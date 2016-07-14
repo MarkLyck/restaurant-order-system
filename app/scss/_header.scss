@@ -1,11 +1,22 @@
 header {
-  padding: 0 0 0 40px;
-  background-color: $primary-color;
   color: #fff;
+  position: relative;
   nav {
+    padding-left: 40px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: $primary-color;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.8);
     #login-btn {
+      position: absolute;
+      right: 0;
+      height: 100%;
       color: #fff;
       padding: 20px;
       background: darken($primary-color, 5%);
@@ -14,5 +25,12 @@ header {
         background: darken($primary-color, 10%);
       }
     }
+  }
+  #hero {
+    margin-top: 75px;
+    width: 100%;
+    height: 400px;
+    background: url("assets/images/hero.jpg");
+    background-size: cover;
   }
 }

@@ -25,7 +25,7 @@ function renderOrderView() {
           <p class="order-item-price">${item.price}</p>
           <button class="order-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
-        <div class="order-options">
+        <div class="order-options hide-options">
 					<input class="order-item-vegan" type="checkbox" name="name">
 					<input class="order-item-spice-level" type="range" min="0" max="10" step="1" value="0"/>
 					<input class="order-item-request" type="text" name="name" placeholder="Special Request">
@@ -37,6 +37,15 @@ function renderOrderView() {
       sessionOrder.calcTax()
       sessionOrder.calcTotal()
     })
+
+
+    // Toggle options
+    $orderItemLi.on('click', () => {
+      $orderItemLi.find('.order-options').toggleClass('hide-options')
+      $orderItemLi.closest('li').siblings().find('.order-options').addClass('hide-options')
+    })
+
+
     $orderList.append($orderItemLi)
   })
 

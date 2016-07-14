@@ -10,7 +10,8 @@ const Order = Backbone.Model.extend({
   defaults: {
     items: [],
     total: 0,
-    tax: 0
+    tax: 0,
+    state: 'incomplete'
   },
   urlRoot: orderAPI,
 })
