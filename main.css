@@ -1,17 +1,34 @@
 header {
-  padding: 0 0 0 40px;
-  background-color: #c74848;
-  color: #fff; }
+  color: #fff;
+  position: relative; }
   header nav {
+    padding-left: 40px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #c74848;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
     header nav #login-btn {
+      position: absolute;
+      right: 0;
+      height: 100%;
       color: #fff;
       padding: 20px;
       background: #bc3a3a;
       border: none; }
       header nav #login-btn:hover {
         background: #a83434; }
+  header #hero {
+    margin-top: 75px;
+    width: 100%;
+    height: 400px;
+    background: url("assets/images/hero.jpg");
+    background-size: cover; }
 
 #menu-view-container {
   display: flex;
@@ -23,6 +40,8 @@ header {
 
 #order-container #order-list .order-item {
   display: flex; }
+  #order-container #order-list .order-item .hide-options {
+    display: none; }
 
 ul {
   list-style: none;
