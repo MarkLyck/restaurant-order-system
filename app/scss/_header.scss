@@ -22,11 +22,10 @@ header {
       height: 100%;
       color: #fff;
       padding: 20px;
-      background: darken($primary-color, 5%);
-      border: none;
-      &:hover {
-        background: darken($primary-color, 10%);
-      }
+    }
+    #logout-btn {
+      color: #fff;
+      padding: 20px;
     }
   }
   #hero {

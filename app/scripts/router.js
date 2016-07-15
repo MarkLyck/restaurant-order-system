@@ -1,10 +1,12 @@
 import $ from 'jquery'
 import Backbone from 'backbone'
+import masonry from 'masonry'
 
 import MenuItem from './models/menuItem'
 import renderMenuView from './views/menuView'
 import renderConfirmation from './views/confirmationView'
 import renderLogin from './views/loginView'
+import renderManager from './views/manageView'
 
 let $container = $('.container')
 
@@ -49,8 +51,23 @@ const Router = Backbone.Router.extend({
     $container.append($login)
   },
   manageOrdersView: function() {
-    $container.empty()
     console.log('MANAGE ORDERS!');
+    $header = $(`
+      <header>
+        <nav>
+          <a href="#menu"><h2 id="logo">FLAMMEN</h2></a>
+          <button id="logout-btn" type="button" name="button">Logout</button>
+        </nav>
+      </header>`)
+      let $manager = renderManager()
+    $container.empty().append($header).append($manager)
+
+    $('.grid').masonry({
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+    
   }
 })
 

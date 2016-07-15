@@ -1,0 +1,13 @@
+$order-color: #fff;
+
+#manage-orders-container {
+  margin-top: 75px;
+  #manage-all-orders-list {
+    .full-order {
+      background: $order-color;
+      display: flex;
+      flex-direction: column;
+      width: calc(100%/4);
+    }
+  }
+}

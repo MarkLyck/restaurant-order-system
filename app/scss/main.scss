@@ -7,6 +7,7 @@
 @import "orderView";
 @import "confirmation";
 @import "login";
+@import "manager";
 
 body {
   background: $primary-background;
@@ -30,6 +31,7 @@ button, input {
 button {
   background: darken($primary-color, 5%);
   border: none;
+  color: #fff;
   &:hover {
     background: darken($primary-color, 10%);
   }

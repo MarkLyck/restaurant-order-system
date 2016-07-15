@@ -20,11 +20,10 @@ header {
       right: 0;
       height: 100%;
       color: #fff;
-      padding: 20px;
-      background: #bc3a3a;
-      border: none; }
-      header nav #login-btn:hover {
-        background: #a83434; }
+      padding: 20px; }
+    header nav #logout-btn {
+      color: #fff;
+      padding: 20px; }
   header #hero {
     margin-top: 75px;
     width: 100%;
@@ -349,6 +348,14 @@ header {
     border-bottom-right-radius: 3px;
     color: #fff; }
 
+#manage-orders-container {
+  margin-top: 75px; }
+  #manage-orders-container #manage-all-orders-list .full-order {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/4); }
+
 body {
   background: #231F20; }
 
@@ -366,7 +373,8 @@ button, input {
 
 button {
   background: #bc3a3a;
-  border: none; }
+  border: none;
+  color: #fff; }
   button:hover {
     background: #a83434; }
 
