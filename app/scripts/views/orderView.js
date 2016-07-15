@@ -29,12 +29,19 @@ function renderOrderView() {
           </div>
         </div>
         <div class="order-options">
-					<label class="order-item-vegan">Vegan                    <input type="checkbox" name="name"> <div class="fake-checkbox"></div> </label>
-					<label class="order-item-spice-level">Spice Level        <input type="range" min="0" max="10" step="1" value="0"/></label>
-					<label class="order-item-request"><p>Special Request</p> <input type="text" name="name" placeholder="Special Request"></label>
+					<label class="order-item-vegan">Vegan                    <input class="vegan-checkbox" type="checkbox" name="name"> <div class="fake-checkbox"></div> </label>
+					<label class="order-item-spice-level">Spice Level        <input class="spice-range" type="range" min="0" max="10" step="1" value="0"/></label>
+					<label class="order-item-request"><p>Special Request</p> <input class="special-request" type="text" name="name" placeholder="Special Request"></label>
         </div>
       </li>
     `)
+
+    let optionVegan = false
+    let spiceLevel = 0
+    let specialRequest = ''
+
+
+
     // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
       sessionOrder.removeItem(item)
@@ -49,16 +56,30 @@ function renderOrderView() {
       $orderItemLi.closest('li').siblings().addClass('hide-options')
     })
 
-    // $orderItemLi.find('.order-item-vegan').off()
 
-
-
-
-    // HELP!, this code runs twice for no apparent reason
+    // VEGAN OPTION
     $orderItemLi.find('.order-item-vegan').on('click', (e) => {
       e.preventDefault()
-      console.log('I like to log myself twice for no reason...');
+      if (optionVegan === false) {
+        optionVegan = true
+      } else {
+        optionVegan = false
+      }
+      sessionOrder.set('optionVegan', optionVegan)
       $orderItemLi.find('.fake-checkbox').toggleClass('selected')
+    })
+
+    // SPICE LEVEL
+    $orderItemLi.find('.spice-range').on('input', () => {
+      spiceLevel = $orderItemLi.find('.spice-range').val()
+      sessionOrder.set('optionSpiceLevel', spiceLevel)
+    })
+
+    // SPECIAL REQUEST
+    $orderItemLi.find('.special-request').on('keyup', () => {
+      specialRequest = $orderItemLi.find('.special-request').val()
+      sessionOrder.set('optionSpecialRequest', specialRequest)
+      // sessionOrder.set('specialRequest', $orderItemLi.find('.special-request').val())
     })
 
 
@@ -67,6 +88,14 @@ function renderOrderView() {
 
   $orderNow.on('click', () => {
     console.log('CLICKED ORDER NOW');
+
+    // let $optionSpiceLevel = $orderList.find('.spice-range')
+    // let $optionSpecialRequest = $orderList.find('.special-request')
+    //
+    // console.log('checkbox: ', $optionVegan.prop("checked"));
+    // console.log($optionSpiceLevel.val());
+    // console.log($optionSpecialRequest.val());
+
     sessionOrder.set('timeStamp', new Date())
     orderCollection.add(sessionOrder)
     sessionOrder.save(null, {success: function(response) {

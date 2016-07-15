@@ -21,11 +21,13 @@ Order.prototype.addItem = function(item) {
   let currItems = this.get('items')
   let newArr = currItems.concat(item)
   this.set('items', newArr)
+  this.trigger('updateOrderList')
 }
 
 Order.prototype.removeItem = function(item) {
   let newItems = _.without(this.get('items'), item)
   this.set('items', newItems)
+  this.trigger('updateOrderList')
 }
 
 Order.prototype.calcTax = function() {

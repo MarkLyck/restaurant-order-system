@@ -79,7 +79,7 @@ function renderMenuView() {
   })
   let $orderView = renderOrderView(sessionOrder)
   $menu.find('#order-container').empty().append($orderView)
-  sessionOrder.on('change', function() {
+  sessionOrder.on('updateOrderList', function() {
     let $orderView = renderOrderView(sessionOrder)
     $menu.find('#order-container').empty().append($orderView)
   })
