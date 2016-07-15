@@ -2,9 +2,68 @@
   display: flex;
   justify-content: space-between;
   #menu-container {
-    width: 40%;
+    width: 70%;
+    margin-right: 5%;
+    h1 {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      box-sizing: border-box;
+      color: #fff;
+      margin: 0;
+    }
+    #menu-list {
+
+    }
   }
   #order-container {
-    width: 40%
+    width: 25%
+  }
+}
+
+
+.menu-cat {
+  margin-bottom: 40px;
+  .menu-cat-title {
+    background: lighten($primary-background, 5%);
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+  }
+  .menu-items-container {
+    .menu-item {
+      padding-left: 20px;
+      background: $primary-color;
+      color: #fff;
+      &:hover {
+        background: lighten($primary-color, 3%);
+        cursor: pointer;
+      }
+      .top {
+        justify-content: space-between;
+        display: flex;
+        .wrapper {
+          display: flex;
+          button {
+            margin-left: 20px;
+            background: darken($primary-color, 5%);
+            width: 60px;
+            border: none;
+            color: #fff;
+            &:hover {
+              background: darken($primary-color, 10%);
+            }
+          }
+        }
+      }
+      .bottom {
+        display: none;
+      }
+    }
+    .hidden {
+      .bottom {
+        display: block;
+      }
+    }
   }
 }

@@ -6,6 +6,10 @@
 @import "orderView";
 @import "confirmation";
 
+body {
+  background: $primary-background;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -27,7 +31,13 @@ main {
 
 footer {
   padding: 0 40px;
+  color: #fff;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: lighter;
+}
+
 
 // .hidden {
 //   display: none;

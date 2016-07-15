@@ -36,7 +36,10 @@ function renderMenuView() {
           <li class="menu-item">
             <div class="top">
               <h3 class="menu-item-title">${item.item}</h3>
-              <h4 class="menu-item-price">${item.price}</h4>
+              <div class="wrapper">
+                <h4 class="menu-item-price">$${item.price}.00</h4>
+                <button class="add-to-order"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              </div>
             </div>
             <div class="bottom">
               <p class="menu-item-desc">${item.description}</p>

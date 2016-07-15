@@ -1,10 +1,112 @@
 #order-container {
+  margin-top: 80px;
+  // background: $primary-color;
+  color: #fff;
+  height: auto;
+  h2 {
+    background: lighten($primary-background, 5%);
+    padding: 20px;
+    margin: 0;
+  }
   #order-list {
+    background: $primary-color;
     .order-item {
       display: flex;
-      .hide-options {
+      flex-direction: column;
+      height: 500px;
+      .order-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        label {
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .order-item-vegan {
+          margin: 10px 0;
+        }
+        .order-item-spice-level {
+          margin: 10px 0;
+        }
+        .order-item-request {
+          margin-top: 10px;
+          display: block;
+          padding: 0;
+          p {
+            margin-left: 10px;
+          }
+          input {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+          }
+        }
+      }
+      .wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        .order-item-title {
+          margin-left: 10px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-right: 10px;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          button {
+            margin-left: 10px;
+            height: 60px;
+            width: 60px;
+            border: none;
+            background: darken($primary-color, 5%);
+            color: #fff;
+            &:hover {
+              background: darken($primary-color, 10%);
+            }
+          }
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        background: lighten($primary-color, 3%);
+      }
+    }
+    .hide-options {
+      height: 60px;
+      .order-options {
         display: none;
       }
+    }
+  }
+  #order-tax {
+    background: lighten($primary-background, 5%);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right;
+  }
+  #order-total {
+    background: lighten($primary-background, 5%);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right;
+  }
+  #order-now-btn {
+    background: darken($primary-color, 5%);
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 20px 0;
+    &:hover {
+      background: darken($primary-color, 10%);
     }
   }
 }

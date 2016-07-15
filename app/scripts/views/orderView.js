@@ -10,8 +10,8 @@ function renderOrderView() {
 
       </ul>
 
-      <p id="order-tax">Tax: ${sessionOrder.get('tax')}</p>
-      <h4 id="order-total">Total: ${sessionOrder.get('total')}</h4>
+      <p id="order-tax">Tax: $${sessionOrder.get('tax').toFixed(2)}</p>
+      <h4 id="order-total">Total: $${sessionOrder.get('total').toFixed(2)}</h4>
       <button id="order-now-btn" type="button" name="button">Order Now</button>
   `)
   let $orderList = $orderView.filter('#order-list')
@@ -19,16 +19,18 @@ function renderOrderView() {
 
   sessionOrder.get('items').forEach((item, i) => {
     let $orderItemLi = $(`
-      <li class="order-item">
-        <div>
+      <li class="order-item hide-options">
+        <div class="wrapper">
           <p class="order-item-title">${item.item}</p>
-          <p class="order-item-price">${item.price}</p>
-          <button class="order-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <div>
+            <p class="order-item-price">$${item.price}</p>
+            <button class="order-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          </div>
         </div>
-        <div class="order-options hide-options">
-					<input class="order-item-vegan" type="checkbox" name="name">
-					<input class="order-item-spice-level" type="range" min="0" max="10" step="1" value="0"/>
-					<input class="order-item-request" type="text" name="name" placeholder="Special Request">
+        <div class="order-options">
+					<label class="order-item-vegan">Vegan                    <input type="checkbox" name="name"></label>
+					<label class="order-item-spice-level">Spice Level        <input type="range" min="0" max="10" step="1" value="0"/></label>
+					<label class="order-item-request"><p>Special Request</p> <input type="text" name="name" placeholder="Special Request"></label>
         </div>
       </li>
     `)
@@ -40,9 +42,9 @@ function renderOrderView() {
 
 
     // Toggle options
-    $orderItemLi.on('click', () => {
-      $orderItemLi.find('.order-options').toggleClass('hide-options')
-      $orderItemLi.closest('li').siblings().find('.order-options').addClass('hide-options')
+    $orderItemLi.children('.wrapper').on('click', () => {
+      $orderItemLi.toggleClass('hide-options')
+      $orderItemLi.closest('li').siblings().addClass('hide-options')
     })
 
 
