@@ -15,6 +15,7 @@ function renderManager() {
   orderCollection.fetch()
 
   function renderSingleOrder(order) {
+    console.log(order);
     let $li = $(`
       <li class="grid-item full-order">
         <div class="wrapper">

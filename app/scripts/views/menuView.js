@@ -16,9 +16,14 @@ function renderMenuView() {
 
         </ul>
       </div>
-      <div id="order-container"></div>
+      <div id="order-container" class="fixme"></div>
     </div>
     `)
+
+    // var fixmeTop = $('.fixme').offset().top;
+
+
+
   let $menuList = $menu.find('#menu-list')
 
   $.ajax(restaurantAPI).then(response => {
@@ -64,11 +69,14 @@ function renderMenuView() {
           $menuLi.find('.menu-item-title').after($favoriteImage)
         }
         $catLi.find('.menu-items-container').append($menuLi)
+
         $menuLi.find('.add-to-order').on('click', () => {
+          item.options = {}
           sessionOrder.addItem(item)
           sessionOrder.calcTax()
           sessionOrder.calcTotal()
         })
+
         $menuLi.on('click', (e) => {
           if ($(e.target)[0] === $menuLi.find('.top')[0] || $(e.target)[0] === $menuLi.find('.bottom')[0] || $(e.target)[0] === $menuLi.find('.menu-item-title')[0]) {
             $menuLi.find('.bottom').toggleClass('hidden')

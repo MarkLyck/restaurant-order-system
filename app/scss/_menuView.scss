@@ -2,9 +2,11 @@
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
+  position: relative;
+  z-index: 1;
   #menu-container {
     width: 70%;
-    margin-right: 5%;
+    margin-right: 40px;
     h1 {
       display: flex;
       align-items: center;
@@ -13,9 +15,6 @@
       color: #fff;
       margin: 0;
     }
-  }
-  #order-container {
-    width: 25%
   }
 }
 

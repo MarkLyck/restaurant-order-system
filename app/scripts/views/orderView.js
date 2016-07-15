@@ -40,8 +40,6 @@ function renderOrderView() {
     let spiceLevel = 0
     let specialRequest = ''
 
-
-
     // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
       sessionOrder.removeItem(item)
@@ -49,13 +47,11 @@ function renderOrderView() {
       sessionOrder.calcTotal()
     })
 
-
     // Toggle options
     $orderItemLi.children('.wrapper').on('click', () => {
       $orderItemLi.toggleClass('hide-options')
       $orderItemLi.closest('li').siblings().addClass('hide-options')
     })
-
 
     // VEGAN OPTION
     $orderItemLi.find('.order-item-vegan').on('click', (e) => {
@@ -65,36 +61,27 @@ function renderOrderView() {
       } else {
         optionVegan = false
       }
-      sessionOrder.set('optionVegan', optionVegan)
+      sessionOrder.setOption('vegan', optionVegan, i)
       $orderItemLi.find('.fake-checkbox').toggleClass('selected')
     })
 
     // SPICE LEVEL
     $orderItemLi.find('.spice-range').on('input', () => {
       spiceLevel = $orderItemLi.find('.spice-range').val()
-      sessionOrder.set('optionSpiceLevel', spiceLevel)
+      sessionOrder.setOption('spiceLevel', spiceLevel, i)
     })
 
     // SPECIAL REQUEST
     $orderItemLi.find('.special-request').on('keyup', () => {
       specialRequest = $orderItemLi.find('.special-request').val()
-      sessionOrder.set('optionSpecialRequest', specialRequest)
-      // sessionOrder.set('specialRequest', $orderItemLi.find('.special-request').val())
+      sessionOrder.setOption('specialRequest', specialRequest, i)
     })
-
 
     $orderList.append($orderItemLi)
   })
 
   $orderNow.on('click', () => {
     console.log('CLICKED ORDER NOW');
-
-    // let $optionSpiceLevel = $orderList.find('.spice-range')
-    // let $optionSpecialRequest = $orderList.find('.special-request')
-    //
-    // console.log('checkbox: ', $optionVegan.prop("checked"));
-    // console.log($optionSpiceLevel.val());
-    // console.log($optionSpecialRequest.val());
 
     sessionOrder.set('timeStamp', new Date())
     orderCollection.add(sessionOrder)

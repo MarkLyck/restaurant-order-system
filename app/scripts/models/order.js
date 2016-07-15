@@ -42,4 +42,14 @@ Order.prototype.calcTotal = function() {
   this.set('total', newTotal + this.get('tax'))
 }
 
+Order.prototype.setOption = function(optionName, optionValue, i) {
+  console.log('args: ', arguments);
+
+  let newItems = this.get('items')
+  newItems[i].options[optionName] = optionValue
+  this.set('items', newItems)
+
+  // this.set('items'[i][optionName], value)
+}
+
 export default Order
