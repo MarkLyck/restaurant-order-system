@@ -34,14 +34,141 @@ header {
   display: flex;
   justify-content: space-between; }
   #menu-view-container #menu-container {
-    width: 40%; }
+    width: 70%;
+    margin-right: 5%; }
+    #menu-view-container #menu-container h1 {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      box-sizing: border-box;
+      color: #fff;
+      margin: 0; }
   #menu-view-container #order-container {
-    width: 40%; }
+    width: 25%; }
 
-#order-container #order-list .order-item {
-  display: flex; }
-  #order-container #order-list .order-item .hide-options {
-    display: none; }
+.menu-cat {
+  margin-bottom: 40px; }
+  .menu-cat .menu-cat-title {
+    background: #312b2c;
+    margin: 0;
+    padding: 20px;
+    color: #fff; }
+  .menu-cat .menu-items-container .menu-item {
+    padding-left: 20px;
+    background: #c74848;
+    color: #fff; }
+    .menu-cat .menu-items-container .menu-item:hover {
+      background: #cb5454;
+      cursor: pointer; }
+    .menu-cat .menu-items-container .menu-item .top {
+      justify-content: space-between;
+      display: flex; }
+      .menu-cat .menu-items-container .menu-item .top .wrapper {
+        display: flex; }
+        .menu-cat .menu-items-container .menu-item .top .wrapper button {
+          margin-left: 20px;
+          background: #bc3a3a;
+          width: 60px;
+          border: none;
+          color: #fff; }
+          .menu-cat .menu-items-container .menu-item .top .wrapper button:hover {
+            background: #a83434; }
+    .menu-cat .menu-items-container .menu-item .bottom {
+      display: none; }
+  .menu-cat .menu-items-container .hidden .bottom {
+    display: block; }
+
+#order-container {
+  margin-top: 80px;
+  color: #fff;
+  height: auto; }
+  #order-container h2 {
+    background: #312b2c;
+    padding: 20px;
+    margin: 0; }
+  #order-container #order-list {
+    background: #c74848; }
+    #order-container #order-list .order-item {
+      display: flex;
+      flex-direction: column;
+      height: 500px; }
+      #order-container #order-list .order-item .order-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+        #order-container #order-list .order-item .order-options label {
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+        #order-container #order-list .order-item .order-options .order-item-vegan {
+          margin: 10px 0; }
+        #order-container #order-list .order-item .order-options .order-item-spice-level {
+          margin: 10px 0; }
+        #order-container #order-list .order-item .order-options .order-item-request {
+          margin-top: 10px;
+          display: block;
+          padding: 0; }
+          #order-container #order-list .order-item .order-options .order-item-request p {
+            margin-left: 10px; }
+          #order-container #order-list .order-item .order-options .order-item-request input {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none; }
+      #order-container #order-list .order-item .wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center; }
+        #order-container #order-list .order-item .wrapper .order-item-title {
+          margin-left: 10px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-right: 10px; }
+        #order-container #order-list .order-item .wrapper div {
+          display: flex;
+          align-items: center; }
+          #order-container #order-list .order-item .wrapper div button {
+            margin-left: 10px;
+            height: 60px;
+            width: 60px;
+            border: none;
+            background: #bc3a3a;
+            color: #fff; }
+            #order-container #order-list .order-item .wrapper div button:hover {
+              background: #a83434; }
+      #order-container #order-list .order-item:hover {
+        cursor: pointer;
+        background: #cb5454; }
+    #order-container #order-list .hide-options {
+      height: 60px; }
+      #order-container #order-list .hide-options .order-options {
+        display: none; }
+  #order-container #order-tax {
+    background: #312b2c;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right; }
+  #order-container #order-total {
+    background: #312b2c;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right; }
+  #order-container #order-now-btn {
+    background: #bc3a3a;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 20px 0; }
+    #order-container #order-now-btn:hover {
+      background: #a83434; }
+
+body {
+  background: #231F20; }
 
 ul {
   list-style: none;
@@ -58,6 +185,10 @@ main {
   padding: 0 40px; }
 
 footer {
-  padding: 0 40px; }
+  padding: 0 40px;
+  color: #fff; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter; }
 
 /*# sourceMappingURL=main.css.map */
