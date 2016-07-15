@@ -7,11 +7,11 @@ $complete-color: #22c979;
     display: flex;
     flex-wrap: wrap;
     .full-order {
-      margin: 10px;
+      margin: 20px;
       background: $order-color;
       display: flex;
       flex-direction: column;
-      width: calc(100% / 4 - 20px);
+      width: calc(100% / 4 - 40px);
       .wrapper {
         display: flex;
         justify-content: space-between;
@@ -27,8 +27,6 @@ $complete-color: #22c979;
             cursor: pointer;
           }
           &:hover::before {
-            // width: 100px;
-            // height: 100px;
             font-family: 'FontAwesome';
             content: '\f00c';
             margin-right: 10px;
@@ -64,6 +62,10 @@ $complete-color: #22c979;
         font-weight: bold;
       }
 
+    }
+    .completed {
+      background: rgba(0,0,0,0.5);
+      text-decoration: line-through;
     }
     // .full-order:first-child {
     //   background: $primary-color;

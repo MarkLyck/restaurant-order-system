@@ -37,16 +37,30 @@ function renderManager() {
       $li.find('.order-items-list').append($itemLi)
     })
 
+    if (order.get('state') === 'complete') {
+      console.log('state already complete');
+      $li.filter('full-order').addClass('completed')
+    }
+
     $li.find('.delete-order').on('click', () => {
       console.log('DELETING ORDER: ', order);
       $li.remove()
-      order.destroy({success: function(response) {
-        console.log('success: ', response);
-      }, error: function(response) {
-        console.log('error: ', response);
-      }})
-      // orderCollection.remove(order)
-      // console.log(orderCollection);
+      order.destroy()
+    })
+
+    $li.find('.manage-order-title').on('click', () => {
+      console.log('Clicked complete / incomplete');
+      if (order.get('state') === 'incomplete') {
+        console.log('Setting complete');
+        order.set('state', 'complete')
+        $li.filter('.full-order').addClass('completed')
+      } else {
+        console.log('Setting incomplete');
+        order.set('state', 'incomplete')
+        $li.filter('.full-order').removeClass('completed')
+      }
+      order.save()
+      console.log(order);
     })
 
 

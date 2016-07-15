@@ -19,7 +19,3 @@ function clearAPI() {
     })
   })
 }
-
-$('#login-btn').on('click', () => {
-  router.navigate('login', {trigger:true})
-})
