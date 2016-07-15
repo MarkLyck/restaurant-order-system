@@ -397,8 +397,11 @@ header {
       #manage-orders-container .manage-all-orders-list .full-order .order-total {
         font-weight: bold; }
     #manage-orders-container .manage-all-orders-list .completed {
-      background: rgba(0, 0, 0, 0.5);
-      text-decoration: line-through; }
+      opacity: 0.25; }
+      #manage-orders-container .manage-all-orders-list .completed .wrapper h2 {
+        background: #22c979; }
+      #manage-orders-container .manage-all-orders-list .completed .order-items-list {
+        text-decoration: line-through; }
 
 body {
   background: #231F20; }
