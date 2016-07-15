@@ -64,11 +64,15 @@ $complete-color: #22c979;
 
     }
     .completed {
-      background: rgba(0,0,0,0.5);
-      text-decoration: line-through;
+      opacity: 0.25;
+      .wrapper {
+        h2 {
+          background: $complete-color;
+        }
+      }
+      .order-items-list {
+        text-decoration: line-through;
+      }
     }
-    // .full-order:first-child {
-    //   background: $primary-color;
-    // }
   }
 }

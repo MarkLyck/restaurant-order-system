@@ -38,8 +38,7 @@ function renderManager() {
     })
 
     if (order.get('state') === 'complete') {
-      console.log('state already complete');
-      $li.filter('full-order').addClass('completed')
+      $li.filter('.full-order').addClass('completed')
     }
 
     $li.find('.delete-order').on('click', () => {
@@ -49,18 +48,14 @@ function renderManager() {
     })
 
     $li.find('.manage-order-title').on('click', () => {
-      console.log('Clicked complete / incomplete');
       if (order.get('state') === 'incomplete') {
-        console.log('Setting complete');
         order.set('state', 'complete')
         $li.filter('.full-order').addClass('completed')
       } else {
-        console.log('Setting incomplete');
         order.set('state', 'incomplete')
         $li.filter('.full-order').removeClass('completed')
       }
       order.save()
-      console.log(order);
     })
 
 
