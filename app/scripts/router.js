@@ -26,6 +26,7 @@ const Router = Backbone.Router.extend({
     $container.append($confirmationView)
   },
   manageOrdersView: function() {
+    // $container.empty().append()
     console.log('MANAGE ORDERS!');
   }
 })

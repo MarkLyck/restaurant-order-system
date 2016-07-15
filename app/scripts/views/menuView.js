@@ -20,7 +20,7 @@ function renderMenuView() {
     </div>
     `)
   let $menuList = $menu.find('#menu-list')
-  
+
   $.ajax(restaurantAPI).then(response => {
     _.keys(response).forEach(category => {
       let $catLi = $(`
@@ -49,7 +49,7 @@ function renderMenuView() {
           </li>
           `)
         $catLi.find('.menu-items-container').append($menuLi)
-        $menuLi.on('click', () => {
+        $menuLi.find('.add-to-order').on('click', () => {
           sessionOrder.addItem(item)
           sessionOrder.calcTax()
           sessionOrder.calcTotal()

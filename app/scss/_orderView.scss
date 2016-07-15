@@ -13,9 +13,10 @@
     .order-item {
       display: flex;
       flex-direction: column;
-      height: calc(300px + 60px);
+      height: calc(281px + 60px);
       .order-options {
-        background: darken($primary-color,5%);
+        // background: darken($primary-color,5%);
+        background: lighten($primary-background,5%);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -27,9 +28,34 @@
         }
         .order-item-vegan {
           margin: 20px 0;
+          input[type="checkbox"] {
+            opacity: 0;
+          }
+          .fake-checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 37px;
+            width: 37px;
+            background: #fff;
+            border: 3px solid #fff;
+            border-radius: 3px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .selected::before {
+            font-family: 'FontAwesome';
+            content: "\f00c";
+            color: $primary-color;
+            font-size: 1.5rem;
+          }
         }
         .order-item-spice-level {
           margin: 20px 0;
+          input[type="range"] {
+            background: none;
+          }
         }
         .order-item-request {
           margin-top: 10px;

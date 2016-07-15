@@ -19,3 +19,7 @@ function clearAPI() {
     })
   })
 }
+
+$('#manage-btn').on('click', () => {
+  router.navigate('manage', {trigger:true})
+})

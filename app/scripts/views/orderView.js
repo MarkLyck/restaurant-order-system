@@ -28,7 +28,7 @@ function renderOrderView() {
           </div>
         </div>
         <div class="order-options">
-					<label class="order-item-vegan">Vegan                    <input type="checkbox" name="name"></label>
+					<label class="order-item-vegan">Vegan                    <input type="checkbox" name="name"> <div class="fake-checkbox"></div> </label>
 					<label class="order-item-spice-level">Spice Level        <input type="range" min="0" max="10" step="1" value="0"/></label>
 					<label class="order-item-request"><p>Special Request</p> <input type="text" name="name" placeholder="Special Request"></label>
         </div>
@@ -45,6 +45,14 @@ function renderOrderView() {
     $orderItemLi.children('.wrapper').on('click', () => {
       $orderItemLi.toggleClass('hide-options')
       $orderItemLi.closest('li').siblings().addClass('hide-options')
+    })
+
+    // $orderItemLi.find('.order-item-vegan').off()
+
+    // HELP!, this code runs twice for no apparent reason
+    $orderItemLi.find('.order-item-vegan').on('click', () => {
+      console.log('I like to log myself twice for no reason...');
+      $orderItemLi.find('.fake-checkbox').toggleClass('selected')
     })
 
 

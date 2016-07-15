@@ -3,6 +3,7 @@
 @import "variables";
 @import "header";
 @import "menuView";
+@import "inputRange";
 @import "orderView";
 @import "confirmation";
 
@@ -14,6 +15,11 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 button, input {
@@ -30,8 +36,12 @@ main {
 }
 
 footer {
-  padding: 0 40px;
+  padding: 20px 40px;
   color: #fff;
+  background: lighten($primary-background, 5%);
+  p {
+    // margin-bottom: 0;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
