@@ -2,6 +2,7 @@ import $ from 'jquery'
 import _ from 'underscore'
 import router from '../router'
 import sessionOrder from '../sessionOrder'
+import orderCollection from '../collections/orderCollection'
 
 function renderOrderView() {
   let $orderView = $(`
@@ -67,6 +68,7 @@ function renderOrderView() {
   $orderNow.on('click', () => {
     console.log('CLICKED ORDER NOW');
     sessionOrder.set('timeStamp', new Date())
+    orderCollection.add(sessionOrder)
     sessionOrder.save(null, {success: function(response) {
       console.log('SUCCEFULL ORDER!');
       router.navigate('order/' + sessionOrder.get('_id'), {trigger:true})

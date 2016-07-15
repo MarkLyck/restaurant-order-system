@@ -1,6 +1,5 @@
 import $ from 'jquery'
 import Backbone from 'backbone'
-import masonry from 'masonry'
 
 import MenuItem from './models/menuItem'
 import renderMenuView from './views/menuView'
@@ -59,15 +58,8 @@ const Router = Backbone.Router.extend({
           <button id="logout-btn" type="button" name="button">Logout</button>
         </nav>
       </header>`)
-      let $manager = renderManager()
+    let $manager = renderManager()
     $container.empty().append($header).append($manager)
-
-    $('.grid').masonry({
-      // options...
-      itemSelector: '.grid-item',
-      columnWidth: 200
-    });
-    
   }
 })
 

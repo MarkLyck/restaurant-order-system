@@ -1,13 +1,72 @@
 $order-color: #fff;
+$complete-color: #22c979;
 
 #manage-orders-container {
   margin-top: 75px;
-  #manage-all-orders-list {
+  .manage-all-orders-list {
+    display: flex;
+    flex-wrap: wrap;
     .full-order {
+      margin: 10px;
       background: $order-color;
       display: flex;
       flex-direction: column;
-      width: calc(100%/4);
+      width: calc(100% / 4 - 20px);
+      .wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        h2 {
+          color: #fff;
+          margin: 0;
+          padding: 20px;
+          background: lighten($primary-background,5%);
+          width: calc(100% - 70px);
+          &:hover {
+            background: $complete-color;
+            cursor: pointer;
+          }
+          &:hover::before {
+            // width: 100px;
+            // height: 100px;
+            font-family: 'FontAwesome';
+            content: '\f00c';
+            margin-right: 10px;
+          }
+        }
+        .delete-order {
+          width: 70px;
+          background: lighten($primary-background,10%);
+          &:hover {
+            background: darken($primary-color,5%);
+          }
+        }
+      }
+      .order-items-list {
+        .single-order-item {
+          background: darken($order-color, 5%);
+          border-bottom: 2px solid darken($order-color, 10%);
+          h3 {
+            margin: 0;
+            padding: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+      }
+      h4 {
+        text-align: right;
+        padding: 10px 20px;
+        margin: 0;
+      }
+      .order-total {
+        font-weight: bold;
+      }
+
     }
+    // .full-order:first-child {
+    //   background: $primary-color;
+    // }
   }
 }
