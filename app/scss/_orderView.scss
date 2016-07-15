@@ -13,8 +13,9 @@
     .order-item {
       display: flex;
       flex-direction: column;
-      height: 500px;
+      height: calc(300px + 60px);
       .order-options {
+        background: darken($primary-color,5%);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -25,10 +26,10 @@
           justify-content: space-between;
         }
         .order-item-vegan {
-          margin: 10px 0;
+          margin: 20px 0;
         }
         .order-item-spice-level {
-          margin: 10px 0;
+          margin: 20px 0;
         }
         .order-item-request {
           margin-top: 10px;

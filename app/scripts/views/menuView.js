@@ -20,6 +20,7 @@ function renderMenuView() {
     </div>
     `)
   let $menuList = $menu.find('#menu-list')
+  
   $.ajax(restaurantAPI).then(response => {
     _.keys(response).forEach(category => {
       let $catLi = $(`

@@ -16,6 +16,7 @@ const Order = Backbone.Model.extend({
   urlRoot: orderAPI,
 })
 
+
 Order.prototype.addItem = function(item) {
   let currItems = this.get('items')
   let newArr = currItems.concat(item)

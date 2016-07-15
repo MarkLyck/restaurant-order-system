@@ -91,8 +91,9 @@ header {
     #order-container #order-list .order-item {
       display: flex;
       flex-direction: column;
-      height: 500px; }
+      height: calc(300px + 60px); }
       #order-container #order-list .order-item .order-options {
+        background: #bc3a3a;
         display: flex;
         flex-direction: column;
         justify-content: space-between; }
@@ -102,9 +103,9 @@ header {
           align-items: center;
           justify-content: space-between; }
         #order-container #order-list .order-item .order-options .order-item-vegan {
-          margin: 10px 0; }
+          margin: 20px 0; }
         #order-container #order-list .order-item .order-options .order-item-spice-level {
-          margin: 10px 0; }
+          margin: 20px 0; }
         #order-container #order-list .order-item .order-options .order-item-request {
           margin-top: 10px;
           display: block;
@@ -166,6 +167,45 @@ header {
     padding: 20px 0; }
     #order-container #order-now-btn:hover {
       background: #a83434; }
+
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .modal-container .modal {
+    width: 60%;
+    background: #c74848;
+    color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-sizing: border-box; }
+  .modal-container .confirmation-modal {
+    max-width: 400px; }
+    .modal-container .confirmation-modal h3 {
+      padding: 40px;
+      text-align: center;
+      background: #312b2c;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      margin-top: 0; }
+    .modal-container .confirmation-modal p {
+      padding: 20px; }
+    .modal-container .confirmation-modal button {
+      border: none;
+      background: #bc3a3a;
+      width: 100%;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      color: #fff;
+      padding: 20px; }
+      .modal-container .confirmation-modal button:hover {
+        background: #a83434; }
 
 body {
   background: #231F20; }
