@@ -350,11 +350,52 @@ header {
 
 #manage-orders-container {
   margin-top: 75px; }
-  #manage-orders-container #manage-all-orders-list .full-order {
-    background: #fff;
+  #manage-orders-container .manage-all-orders-list {
     display: flex;
-    flex-direction: column;
-    width: calc(100%/4); }
+    flex-wrap: wrap; }
+    #manage-orders-container .manage-all-orders-list .full-order {
+      margin: 10px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      width: calc(100% / 4 - 20px); }
+      #manage-orders-container .manage-all-orders-list .full-order .wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 70px; }
+        #manage-orders-container .manage-all-orders-list .full-order .wrapper h2 {
+          color: #fff;
+          margin: 0;
+          padding: 20px;
+          background: #312b2c;
+          width: calc(100% - 70px); }
+          #manage-orders-container .manage-all-orders-list .full-order .wrapper h2:hover {
+            background: #22c979;
+            cursor: pointer; }
+          #manage-orders-container .manage-all-orders-list .full-order .wrapper h2:hover::before {
+            font-family: 'FontAwesome';
+            content: '\f00c';
+            margin-right: 10px; }
+        #manage-orders-container .manage-all-orders-list .full-order .wrapper .delete-order {
+          width: 70px;
+          background: #3e3739; }
+          #manage-orders-container .manage-all-orders-list .full-order .wrapper .delete-order:hover {
+            background: #bc3a3a; }
+      #manage-orders-container .manage-all-orders-list .full-order .order-items-list .single-order-item {
+        background: #f2f2f2;
+        border-bottom: 2px solid #e6e6e6; }
+        #manage-orders-container .manage-all-orders-list .full-order .order-items-list .single-order-item h3 {
+          margin: 0;
+          padding: 20px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+      #manage-orders-container .manage-all-orders-list .full-order h4 {
+        text-align: right;
+        padding: 10px 20px;
+        margin: 0; }
+      #manage-orders-container .manage-all-orders-list .full-order .order-total {
+        font-weight: bold; }
 
 body {
   background: #231F20; }
