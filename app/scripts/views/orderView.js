@@ -34,6 +34,7 @@ function renderOrderView() {
         </div>
       </li>
     `)
+    // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
       sessionOrder.removeItem(item)
       sessionOrder.calcTax()
@@ -49,8 +50,12 @@ function renderOrderView() {
 
     // $orderItemLi.find('.order-item-vegan').off()
 
+
+
+
     // HELP!, this code runs twice for no apparent reason
-    $orderItemLi.find('.order-item-vegan').on('click', () => {
+    $orderItemLi.find('.order-item-vegan').on('click', (e) => {
+      e.preventDefault()
       console.log('I like to log myself twice for no reason...');
       $orderItemLi.find('.fake-checkbox').toggleClass('selected')
     })

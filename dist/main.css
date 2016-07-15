@@ -15,7 +15,7 @@ header {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
     header nav h2 {
       font-weight: normal; }
-    header nav #manage-btn {
+    header nav #login-btn {
       position: absolute;
       right: 0;
       height: 100%;
@@ -23,7 +23,7 @@ header {
       padding: 20px;
       background: #bc3a3a;
       border: none; }
-      header nav #manage-btn:hover {
+      header nav #login-btn:hover {
         background: #a83434; }
   header #hero {
     margin-top: 75px;
@@ -34,7 +34,8 @@ header {
 
 #menu-view-container {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 0 40px; }
   #menu-view-container #menu-container {
     width: 70%;
     margin-right: 5%; }
@@ -56,15 +57,22 @@ header {
     padding: 20px;
     color: #fff; }
   .menu-cat .menu-items-container .menu-item {
-    padding-left: 20px;
     background: #c74848;
     color: #fff; }
     .menu-cat .menu-items-container .menu-item:hover {
       background: #cb5454;
       cursor: pointer; }
     .menu-cat .menu-items-container .menu-item .top {
+      padding-left: 20px;
       justify-content: space-between;
       display: flex; }
+      .menu-cat .menu-items-container .menu-item .top .top-wrapper {
+        display: flex;
+        align-items: center; }
+        .menu-cat .menu-items-container .menu-item .top .top-wrapper .menu-icon {
+          margin-left: 10px;
+          fill: #fff;
+          height: 15px; }
       .menu-cat .menu-items-container .menu-item .top .wrapper {
         display: flex; }
         .menu-cat .menu-items-container .menu-item .top .wrapper button {
@@ -76,6 +84,17 @@ header {
           .menu-cat .menu-items-container .menu-item .top .wrapper button:hover {
             background: #a83434; }
     .menu-cat .menu-items-container .menu-item .bottom {
+      display: flex;
+      background: #bc3a3a; }
+      .menu-cat .menu-items-container .menu-item .bottom p {
+        margin: 0;
+        padding: 20px 10px 20px 20px;
+        width: calc(100% - 60px);
+        box-sizing: border-box; }
+      .menu-cat .menu-items-container .menu-item .bottom .menu-item-warnings {
+        width: 60px;
+        background: #bc3a3a; }
+    .menu-cat .menu-items-container .menu-item .hidden {
       display: none; }
   .menu-cat .menu-items-container .hidden .bottom {
     display: block; }
@@ -305,6 +324,31 @@ header {
       .modal-container .confirmation-modal button:hover {
         background: #a83434; }
 
+.login-modal {
+  display: flex;
+  flex-direction: column;
+  background: #c74848;
+  width: 60%;
+  border-radius: 3px; }
+  .login-modal h3 {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background: #312b2c;
+    margin: 0;
+    box-sizing: border-box;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  .login-modal input {
+    padding: 20px;
+    border: none; }
+  .login-modal button {
+    width: 100%;
+    padding: 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #fff; }
+
 body {
   background: #231F20; }
 
@@ -320,11 +364,17 @@ a {
 button, input {
   outline: none; }
 
+button {
+  background: #bc3a3a;
+  border: none; }
+  button:hover {
+    background: #a83434; }
+
 button:hover {
   cursor: pointer; }
 
 main {
-  padding: 0 40px; }
+  padding: 0; }
 
 footer {
   padding: 20px 40px;

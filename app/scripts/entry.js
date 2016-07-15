@@ -20,6 +20,6 @@ function clearAPI() {
   })
 }
 
-$('#manage-btn').on('click', () => {
-  router.navigate('manage', {trigger:true})
+$('#login-btn').on('click', () => {
+  router.navigate('login', {trigger:true})
 })

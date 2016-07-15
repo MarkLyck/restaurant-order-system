@@ -1,6 +1,7 @@
 #menu-view-container {
   display: flex;
   justify-content: space-between;
+  padding: 0 40px;
   #menu-container {
     width: 70%;
     margin-right: 5%;
@@ -32,7 +33,6 @@
   }
   .menu-items-container {
     .menu-item {
-      padding-left: 20px;
       background: $primary-color;
       color: #fff;
       &:hover {
@@ -40,8 +40,18 @@
         cursor: pointer;
       }
       .top {
+        padding-left: 20px;
         justify-content: space-between;
         display: flex;
+        .top-wrapper {
+          display: flex;
+          align-items: center;
+          .menu-icon {
+            margin-left: 10px;
+            fill: #fff;
+            height: 15px;
+          }
+        }
         .wrapper {
           display: flex;
           button {
@@ -57,6 +67,20 @@
         }
       }
       .bottom {
+        display: flex;
+        background: darken($primary-color,5%);
+        p {
+          margin: 0;
+          padding: 20px 10px 20px 20px;
+          width: calc(100% - 60px);
+          box-sizing: border-box;
+        }
+        .menu-item-warnings {
+          width: 60px;
+          background: darken($primary-color, 5%);
+        }
+      }
+      .hidden {
         display: none;
       }
     }

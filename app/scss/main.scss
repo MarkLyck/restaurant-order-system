@@ -6,6 +6,7 @@
 @import "inputRange";
 @import "orderView";
 @import "confirmation";
+@import "login";
 
 body {
   background: $primary-background;
@@ -26,13 +27,21 @@ button, input {
   outline: none;
 }
 
+button {
+  background: darken($primary-color, 5%);
+  border: none;
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
 button:hover {
   cursor: pointer;
 }
 
 
 main {
-  padding: 0 40px;
+  padding: 0;
 }
 
 footer {
