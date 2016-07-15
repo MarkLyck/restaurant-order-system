@@ -12,7 +12,8 @@ header {
     height: 75px;
     background-color: #c74848;
     box-sizing: border-box;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    z-index: 10; }
     header nav h2 {
       font-weight: normal; }
     header nav #login-btn {
@@ -34,10 +35,12 @@ header {
 #menu-view-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px; }
+  padding: 0 40px;
+  position: relative;
+  z-index: 1; }
   #menu-view-container #menu-container {
     width: 70%;
-    margin-right: 5%; }
+    margin-right: 40px; }
     #menu-view-container #menu-container h1 {
       display: flex;
       align-items: center;
@@ -45,8 +48,6 @@ header {
       box-sizing: border-box;
       color: #fff;
       margin: 0; }
-  #menu-view-container #order-container {
-    width: 25%; }
 
 .menu-cat {
   margin-bottom: 40px; }
@@ -175,6 +176,7 @@ header {
     background: white; }
 
 #order-container {
+  top: 500px;
   margin-top: 80px;
   color: #fff;
   height: auto; }
