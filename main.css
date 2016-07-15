@@ -354,11 +354,11 @@ header {
     display: flex;
     flex-wrap: wrap; }
     #manage-orders-container .manage-all-orders-list .full-order {
-      margin: 10px;
+      margin: 20px;
       background: #fff;
       display: flex;
       flex-direction: column;
-      width: calc(100% / 4 - 20px); }
+      width: calc(100% / 4 - 40px); }
       #manage-orders-container .manage-all-orders-list .full-order .wrapper {
         display: flex;
         justify-content: space-between;
@@ -396,6 +396,9 @@ header {
         margin: 0; }
       #manage-orders-container .manage-all-orders-list .full-order .order-total {
         font-weight: bold; }
+    #manage-orders-container .manage-all-orders-list .completed {
+      background: rgba(0, 0, 0, 0.5);
+      text-decoration: line-through; }
 
 body {
   background: #231F20; }
