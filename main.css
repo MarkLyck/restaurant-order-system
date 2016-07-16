@@ -192,7 +192,7 @@ header {
       flex-direction: column;
       height: calc(281px + 60px); }
       #order-container #order-list .order-item .order-options {
-        background: #312b2c;
+        background: #bc3a3a;
         display: flex;
         flex-direction: column;
         justify-content: space-between; }
