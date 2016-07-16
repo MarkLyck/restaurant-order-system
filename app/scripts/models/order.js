@@ -26,9 +26,11 @@ Order.prototype.addItem = function(item) {
   this.trigger('updateOrderList')
 }
 
-Order.prototype.removeItem = function(item) {
-  let newItems = _.without(this.get('items'), item)
+Order.prototype.removeItem = function(item, i) {
+  let newItems = this.get('items')
+  newItems.splice(i, 1)
   this.set('items', newItems)
+
   this.calcTax()
   this.calcTotal()
   this.trigger('updateOrderList')

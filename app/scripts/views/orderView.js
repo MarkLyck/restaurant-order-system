@@ -42,7 +42,10 @@ function renderOrderView() {
 
     // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
-      sessionOrder.removeItem(item)
+      // console.log(item);
+      console.log(sessionOrder);
+
+      sessionOrder.removeItem(item, i)
     })
 
     // Toggle options
