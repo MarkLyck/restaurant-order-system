@@ -29,7 +29,6 @@ function renderLogin() {
     if ($userInput.val() !== '' && $passwordInput.val() !== '') {
       // check login credentials
       if ($userInput.val().toLowerCase() === adminUserName && $passwordInput.val().toLowerCase() === adminPassword) {
-        console.log('VALID CREDENTIALS');
         router.navigate('manage',{trigger:true})
       } else {
         console.log('INVALID CREDENTIALS');

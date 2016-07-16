@@ -19,8 +19,6 @@ const Router = Backbone.Router.extend({
     '/*'    : 'menuView'
   },
   menuView: function() {
-    console.log('RENDER MENU')
-
     let $header = renderHeader('login')
 
     // Pass in the menu object to render
@@ -36,8 +34,6 @@ const Router = Backbone.Router.extend({
     $container.empty().append($header).append($menu).append($footer)
 
     var fixmeTop = $('#order-container').offset().top;
-    console.log(fixmeTop);
-
     $(window).scroll(function() {
         var currentScroll = $(window).scrollTop();
         if (currentScroll >= fixmeTop - 75 - 80) {
@@ -56,17 +52,14 @@ const Router = Backbone.Router.extend({
     });
   },
   confirmationView: function() {
-    console.log('CONFIRMATION VIEW!');
     let $confirmationView = renderConfirmation()
     $container.append($confirmationView)
   },
   loginView: function() {
-    console.log('RENDER LOGIN');
     let $login = renderLogin()
     $container.append($login)
   },
   manageOrdersView: function() {
-    console.log('MANAGE ORDERS!');
     let $header = renderHeader('logout')
     let $manager = renderManager()
     $container.empty().append($header).append($manager)

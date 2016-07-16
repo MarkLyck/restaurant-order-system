@@ -363,6 +363,7 @@ header {
       background: #fff;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       width: calc(100% / 4 - 40px); }
       #manage-orders-container .manage-all-orders-list .full-order .wrapper {
         display: flex;
@@ -395,10 +396,17 @@ header {
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden; }
+        #manage-orders-container .manage-all-orders-list .full-order .order-items-list .single-order-item .specials-container {
+          background: #c74848;
+          color: #fff;
+          padding: 10px 20px; }
+          #manage-orders-container .manage-all-orders-list .full-order .order-items-list .single-order-item .specials-container p {
+            margin: 10px 0; }
       #manage-orders-container .manage-all-orders-list .full-order h4 {
         text-align: right;
         padding: 10px 20px;
-        margin: 0; }
+        margin: 0;
+        align-self: flex-end; }
       #manage-orders-container .manage-all-orders-list .full-order .order-total {
         font-weight: bold; }
     #manage-orders-container .manage-all-orders-list .completed {

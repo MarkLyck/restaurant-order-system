@@ -11,6 +11,7 @@ $complete-color: #22c979;
       background: $order-color;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       width: calc(100% / 4 - 40px);
       .wrapper {
         display: flex;
@@ -51,12 +52,22 @@ $complete-color: #22c979;
             text-overflow: ellipsis;
             overflow: hidden;
           }
+          .specials-container {
+            // background: lighten($primary-background,10%);
+            background: $primary-color;
+            color: #fff;
+            padding: 10px 20px;
+            p {
+              margin: 10px 0;
+            }
+          }
         }
       }
       h4 {
         text-align: right;
         padding: 10px 20px;
         margin: 0;
+        align-self: flex-end;
       }
       .order-total {
         font-weight: bold;
