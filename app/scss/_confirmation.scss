@@ -8,15 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
   .modal {
     width: 60%;
     background: $primary-color;
     color: #fff;
-    // border-radius: 3px;
-    // padding: 40px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     box-sizing: border-box;
+    z-index: 101;
   }
   .confirmation-modal {
     max-width: 400px;

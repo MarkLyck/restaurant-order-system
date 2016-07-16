@@ -179,7 +179,8 @@ header {
   top: 500px;
   margin-top: 80px;
   color: #fff;
-  height: auto; }
+  height: auto;
+  width: 25%; }
   #order-container h2 {
     background: #312b2c;
     padding: 20px;
@@ -295,14 +296,16 @@ header {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 100; }
   .modal-container .modal {
     width: 60%;
     background: #c74848;
     color: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    z-index: 101; }
   .modal-container .confirmation-modal {
     max-width: 400px; }
     .modal-container .confirmation-modal h3 {
