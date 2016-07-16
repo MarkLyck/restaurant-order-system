@@ -82,14 +82,16 @@ function renderOrderView() {
   })
 
   $orderNow.on('click', () => {
-    console.log('CLICKED ORDER NOW');
-
-    sessionOrder.set('timeStamp', new Date())
-    orderCollection.add(sessionOrder)
-    sessionOrder.save(null, {success: function(response) {
-      console.log('SUCCEFULL ORDER!');
-      router.navigate('order/' + sessionOrder.get('_id'), {trigger:true})
-    }})
+    if (sessionOrder.get('items').length > 0) {
+      sessionOrder.set('timeStamp', new Date())
+      orderCollection.add(sessionOrder)
+      sessionOrder.save(null, {success: function(response) {
+        console.log('SUCCEFULL ORDER!');
+        router.navigate('order/' + sessionOrder.get('_id'), {trigger:true})
+      }})
+    } else {
+      console.log('YOU HAVE NOTHING IN YOUR ORDER.');
+    }
   })
   return $orderView
 }
