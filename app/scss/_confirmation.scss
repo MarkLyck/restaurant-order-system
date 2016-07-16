@@ -20,7 +20,7 @@
   }
   .confirmation-modal {
     max-width: 400px;
-    h3 {
+    .success-header {
       padding: 40px;
       text-align: center;
       background: lighten($primary-background, 5%);
@@ -28,8 +28,18 @@
       border-top-right-radius: 3px;
       margin-top: 0;
     }
-    p {
-      padding: 20px;
+    .wrapper {
+      p {
+        padding: 20px;
+      }
+    }
+    .ordered-items {
+      li {
+        background: lighten($primary-color, 5%);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
     }
     button {
       border: none;
