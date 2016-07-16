@@ -43,8 +43,6 @@ function renderOrderView() {
     // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
       sessionOrder.removeItem(item)
-      sessionOrder.calcTax()
-      sessionOrder.calcTotal()
     })
 
     // Toggle options
