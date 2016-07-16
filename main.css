@@ -308,15 +308,20 @@ header {
     z-index: 101; }
   .modal-container .confirmation-modal {
     max-width: 400px; }
-    .modal-container .confirmation-modal h3 {
+    .modal-container .confirmation-modal .success-header {
       padding: 40px;
       text-align: center;
       background: #312b2c;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       margin-top: 0; }
-    .modal-container .confirmation-modal p {
+    .modal-container .confirmation-modal .wrapper p {
       padding: 20px; }
+    .modal-container .confirmation-modal .ordered-items li {
+      background: indianred;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between; }
     .modal-container .confirmation-modal button {
       border: none;
       background: #bc3a3a;
