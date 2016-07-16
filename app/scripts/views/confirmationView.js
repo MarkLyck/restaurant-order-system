@@ -1,10 +1,11 @@
 import $ from 'jquery'
 import sessionOrder from '../sessionOrder'
+import Order from '../models/order'
 import moment from 'moment'
 import router from '../router'
 
 function renderConfirmation() {
-  console.log(sessionOrder);
+  // console.log(sessionOrder);
   let orderNumber = sessionOrder.get('_id')
   let time = sessionOrder.get('timeStamp')
   let $confirmationView = $(`
@@ -25,6 +26,7 @@ function renderConfirmation() {
   $confirmationView.filter('.modal-container').on('click', (e) => {
     if ($(e.target)[0] === $confirmationView.filter('.modal-container')[0]) {
       router.navigate('menu', {trigger: true})
+      // sessionOrder = new Order()
     }
   })
 
@@ -32,10 +34,9 @@ function renderConfirmation() {
     let $li = $(`
       <li>
         <h3>${item.item}</h3>
-        <p>${item.price}</p>
+        <p>$${item.price}</p>
       </li>
       `)
-    // console.log(item);
     $confirmationView.find('.ordered-items').append($li)
   })
 

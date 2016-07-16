@@ -67,7 +67,6 @@ function renderManager() {
           $specials.filter('.specials-container').append($specialRequest)
         })
         $itemLi.filter('.single-order-item').append($specials)
-        // console.log('THIS HAS OPTIONS');
       }
     })
 
