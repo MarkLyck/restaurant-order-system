@@ -94,7 +94,7 @@ function renderManager() {
 
 
 
-    $manageView.find('.manage-all-orders-list').append($li)
+    $manageView.find('.manage-all-orders-list').prepend($li)
   }
   return $manageView
 }
