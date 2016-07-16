@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import _ from 'underscore'
 import orderCollection from '../collections/orderCollection'
 
-const orderAPI = 'https://tiny-za-server.herokuapp.com/collections/mlyck-orders2/'
+const orderAPI = 'https://tiny-za-server.herokuapp.com/collections/mlyck-orders3/'
 const taxPercent = 0.08
 
 const Order = Backbone.Model.extend({
@@ -49,13 +49,22 @@ Order.prototype.calcTotal = function() {
 }
 
 Order.prototype.setOption = function(optionName, optionValue, i) {
-  console.log('args: ', arguments);
-
   let newItems = this.get('items')
   newItems[i].options[optionName] = optionValue
   this.set('items', newItems)
 
   // this.set('items'[i][optionName], value)
+}
+
+Order.prototype.removeOption = function(optionName, optionValue, i) {
+  console.log('args: ', arguments);
+  console.log('deleting option');
+
+  let newItems = this.get('items')
+  delete newItems[i].options[optionName]
+  // _.omit(newItems[i].options,optionName)
+  console.log(newItems);
+  this.set('items', newItems)
 }
 
 export default Order

@@ -16,8 +16,8 @@
       flex-direction: column;
       height: calc(281px + 60px);
       .order-options {
-        // background: darken($primary-color,5%);
-        background: lighten($primary-background,5%);
+        background: darken($primary-color,5%);
+        // background: lighten($primary-background,5%);
         display: flex;
         flex-direction: column;
         justify-content: space-between;

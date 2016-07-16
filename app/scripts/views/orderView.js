@@ -59,10 +59,11 @@ function renderOrderView() {
       e.preventDefault()
       if (optionVegan === false) {
         optionVegan = true
+        sessionOrder.setOption('vegan', optionVegan, i)
       } else {
         optionVegan = false
+        sessionOrder.removeOption('vegan', optionVegan, i)
       }
-      sessionOrder.setOption('vegan', optionVegan, i)
       $orderItemLi.find('.fake-checkbox').toggleClass('selected')
     })
 
