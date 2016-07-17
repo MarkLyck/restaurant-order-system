@@ -84,8 +84,11 @@ header {
           .menu-cat .menu-items-container .menu-item .top .wrapper button:hover {
             background: #a83434; }
     .menu-cat .menu-items-container .menu-item .bottom {
+      max-height: 400px;
       display: flex;
-      background: #bc3a3a; }
+      background: #bc3a3a;
+      transition: max-height 500ms;
+      overflow: hidden; }
       .menu-cat .menu-items-container .menu-item .bottom p {
         margin: 0;
         padding: 20px 10px 20px 20px;
@@ -95,7 +98,9 @@ header {
         width: 60px;
         background: #bc3a3a; }
     .menu-cat .menu-items-container .menu-item .hidden {
-      display: none; }
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 500ms; }
   .menu-cat .menu-items-container .hidden .bottom {
     display: block; }
 
