@@ -1,8 +1,11 @@
 import $ from 'jquery'
 import _ from 'underscore'
+import Backbone from 'backbone'
+
 import router from '../router'
-import sessionOrder from '../sessionOrder'
 import orderCollection from '../collections/orderCollection'
+import store from '../sessionOrder'
+
 
 function renderOrderView() {
   let $orderView = $(`
@@ -11,14 +14,14 @@ function renderOrderView() {
 
       </ul>
 
-      <p id="order-tax">Tax: $${sessionOrder.get('tax').toFixed(2)}</p>
-      <h4 id="order-total">Total: $${sessionOrder.get('total').toFixed(2)}</h4>
+      <p id="order-tax">Tax: $${store.sessionOrder.get('tax').toFixed(2)}</p>
+      <h4 id="order-total">Total: $${store.sessionOrder.get('total').toFixed(2)}</h4>
       <button id="order-now-btn" type="button" name="button">Order Now</button>
   `)
   let $orderList = $orderView.filter('#order-list')
   let $orderNow = $orderView.filter('#order-now-btn')
 
-  sessionOrder.get('items').forEach((item, i) => {
+  store.sessionOrder.get('items').forEach((item, i) => {
     let $orderItemLi = $(`
       <li class="order-item hide-options">
         <div class="wrapper">
@@ -43,9 +46,9 @@ function renderOrderView() {
     // $orderItemLi.off()
     $orderItemLi.find('.order-delete').on('click', () => {
       // console.log(item);
-      console.log(sessionOrder);
+      // console.log(sessionOrder);
 
-      sessionOrder.removeItem(item, i)
+      store.sessionOrder.removeItem(item, i)
     })
 
     // Toggle options
@@ -59,10 +62,10 @@ function renderOrderView() {
       e.preventDefault()
       if (optionVegan === false) {
         optionVegan = true
-        sessionOrder.setOption('vegan', optionVegan, i)
+        store.sessionOrder.setOption('vegan', optionVegan, i)
       } else {
         optionVegan = false
-        sessionOrder.removeOption('vegan', optionVegan, i)
+        store.sessionOrder.removeOption('vegan', optionVegan, i)
       }
       $orderItemLi.find('.fake-checkbox').toggleClass('selected')
     })
@@ -70,25 +73,25 @@ function renderOrderView() {
     // SPICE LEVEL
     $orderItemLi.find('.spice-range').on('input', () => {
       spiceLevel = $orderItemLi.find('.spice-range').val()
-      sessionOrder.setOption('spiceLevel', spiceLevel, i)
+      store.sessionOrder.setOption('spiceLevel', spiceLevel, i)
     })
 
     // SPECIAL REQUEST
     $orderItemLi.find('.special-request').on('keyup', () => {
       specialRequest = $orderItemLi.find('.special-request').val()
-      sessionOrder.setOption('specialRequest', specialRequest, i)
+      store.sessionOrder.setOption('specialRequest', specialRequest, i)
     })
 
     $orderList.append($orderItemLi)
   })
 
   $orderNow.on('click', () => {
-    if (sessionOrder.get('items').length > 0) {
-      sessionOrder.set('timeStamp', new Date())
-      orderCollection.add(sessionOrder)
-      sessionOrder.save(null, {success: function(response) {
+    if (store.sessionOrder.get('items').length > 0) {
+      store.sessionOrder.set('timeStamp', new Date())
+      orderCollection.add(store.sessionOrder)
+      store.sessionOrder.save(null, {success: function(response) {
         console.log('SUCCEFULL ORDER!');
-        router.navigate('order/' + sessionOrder.get('_id'), {trigger:true})
+        router.navigate('order/' + store.sessionOrder.get('_id'), {trigger:true})
       }})
     } else {
       console.log('YOU HAVE NOTHING IN YOUR ORDER.');

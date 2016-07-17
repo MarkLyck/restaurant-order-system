@@ -1,9 +1,7 @@
 import $ from 'jquery'
 import _ from 'underscore'
 import renderOrderView from './orderView'
-// import OrderCollection from '../collections/orderCollection'
-// import order from '../models/order'
-import sessionOrder from '../sessionOrder'
+import store from '../sessionOrder'
 
 const restaurantAPI = 'https://tiy-austin-front-end-engineering.github.io/restaurantApi/fancy.json'
 
@@ -69,9 +67,9 @@ function renderMenuView() {
 
         $menuLi.find('.add-to-order').on('click', () => {
           item.options = {}
-          sessionOrder.addItem(item)
-          sessionOrder.calcTax()
-          sessionOrder.calcTotal()
+          store.sessionOrder.addItem(item)
+          store.sessionOrder.calcTax()
+          store.sessionOrder.calcTotal()
         })
 
         // console.log(item);
@@ -85,10 +83,10 @@ function renderMenuView() {
       })
     })
   })
-  let $orderView = renderOrderView(sessionOrder)
+  let $orderView = renderOrderView(store.sessionOrder)
   $menu.find('#order-container').empty().append($orderView)
-  sessionOrder.on('updateOrderList', function() {
-    let $orderView = renderOrderView(sessionOrder)
+  store.sessionOrder.on('updateOrderList', function() {
+    let $orderView = renderOrderView(store.sessionOrder)
     $menu.find('#order-container').empty().append($orderView)
   })
 

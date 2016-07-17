@@ -2,7 +2,6 @@ import $ from 'jquery'
 import Backbone from 'backbone'
 
 import renderHeader from './views/headerView'
-import MenuItem from './models/menuItem'
 import renderMenuView from './views/menuView'
 import renderConfirmation from './views/confirmationView'
 import renderLogin from './views/loginView'
@@ -31,35 +30,7 @@ const Router = Backbone.Router.extend({
 
     $header.append($hero)
     $container.empty().append($header).append($menu).append($footer)
-
-
-
-
-
     stickyOrder()
-    // // This has to be on this page, after the $menu is appended
-    // let fixmeTop = $('#order-container').offset().top;
-    // $(window).scroll(function() {
-    //     let currentScroll = $(window).scrollTop();
-    //     if (currentScroll >= fixmeTop - 75 - 80) {
-    //         $('#order-container').css({
-    //             position: 'fixed',
-    //             top: '80px',
-    //             right: '40px',
-    //             width: 'calc(25% - 20px)'
-    //         });
-    //     } else {
-    //         $('#order-container').css({
-    //             position: 'static',
-    //             width: 'calc(25%)'
-    //         });
-    //     }
-    // });
-
-
-
-
-
   },
   confirmationView: function() {
     let $confirmationView = renderConfirmation()

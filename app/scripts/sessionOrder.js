@@ -1,6 +1,8 @@
-import orderCollection from './collections/orderCollection'
 import Order from './models/order'
 
-let order = new Order()
+// let order = new Order()
+let store = {
+  sessionOrder: new Order()
+}
 
-export default order
+export default store
