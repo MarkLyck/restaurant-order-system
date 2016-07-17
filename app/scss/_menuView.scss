@@ -63,8 +63,11 @@
         }
       }
       .bottom {
+        max-height: 400px;
         display: flex;
         background: darken($primary-color,5%);
+        transition: max-height 500ms;
+        overflow: hidden;
         p {
           margin: 0;
           padding: 20px 10px 20px 20px;
@@ -77,7 +80,10 @@
         }
       }
       .hidden {
-        display: none;
+        // display: none;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 500ms;
       }
     }
     .hidden {
