@@ -20,9 +20,6 @@ function renderMenuView() {
     </div>
     `)
 
-    // var fixmeTop = $('.fixme').offset().top;
-
-
 
   let $menuList = $menu.find('#menu-list')
 
@@ -94,6 +91,7 @@ function renderMenuView() {
     let $orderView = renderOrderView(sessionOrder)
     $menu.find('#order-container').empty().append($orderView)
   })
+
   return $menu
 }
 

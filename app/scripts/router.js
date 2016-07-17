@@ -7,6 +7,7 @@ import renderMenuView from './views/menuView'
 import renderConfirmation from './views/confirmationView'
 import renderLogin from './views/loginView'
 import renderManager from './views/manageView'
+import stickyOrder from './views/stickyOrder'
 
 let $container = $('.container')
 
@@ -21,9 +22,7 @@ const Router = Backbone.Router.extend({
   menuView: function() {
     let $header = renderHeader('login')
 
-    // Pass in the menu object to render
     let $menu = renderMenuView()
-
     let $hero = $(`<div id="hero"></div>`)
     let $footer = $(`
       <footer>
@@ -33,23 +32,34 @@ const Router = Backbone.Router.extend({
     $header.append($hero)
     $container.empty().append($header).append($menu).append($footer)
 
-    var fixmeTop = $('#order-container').offset().top;
-    $(window).scroll(function() {
-        var currentScroll = $(window).scrollTop();
-        if (currentScroll >= fixmeTop - 75 - 80) {
-            $('#order-container').css({
-                position: 'fixed',
-                top: '80px',
-                right: '40px',
-                width: 'calc(25% - 20px)'
-            });
-        } else {
-            $('#order-container').css({
-                position: 'static',
-                width: 'calc(25%)'
-            });
-        }
-    });
+
+
+
+
+    stickyOrder()
+    // // This has to be on this page, after the $menu is appended
+    // let fixmeTop = $('#order-container').offset().top;
+    // $(window).scroll(function() {
+    //     let currentScroll = $(window).scrollTop();
+    //     if (currentScroll >= fixmeTop - 75 - 80) {
+    //         $('#order-container').css({
+    //             position: 'fixed',
+    //             top: '80px',
+    //             right: '40px',
+    //             width: 'calc(25% - 20px)'
+    //         });
+    //     } else {
+    //         $('#order-container').css({
+    //             position: 'static',
+    //             width: 'calc(25%)'
+    //         });
+    //     }
+    // });
+
+
+
+
+
   },
   confirmationView: function() {
     let $confirmationView = renderConfirmation()

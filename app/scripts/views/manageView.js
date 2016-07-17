@@ -75,7 +75,6 @@ function renderManager() {
     }
 
     $li.find('.delete-order').on('click', () => {
-      console.log('DELETING ORDER: ', order);
       $li.remove()
       order.destroy()
     })

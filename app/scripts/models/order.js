@@ -3,7 +3,7 @@ import _ from 'underscore'
 import orderCollection from '../collections/orderCollection'
 
 const orderAPI = 'https://tiny-za-server.herokuapp.com/collections/mlyck-orders3/'
-const taxPercent = 0.08
+const taxPercent = 0.0825
 
 const Order = Backbone.Model.extend({
   idAttribute: '_id',
