@@ -192,8 +192,11 @@ header {
     #order-container #order-list .order-item {
       display: flex;
       flex-direction: column;
-      height: calc(281px + 60px); }
+      min-height: 60px; }
       #order-container #order-list .order-item .order-options {
+        max-height: 600px;
+        overflow: hidden;
+        transition: 500ms;
         background: #bc3a3a;
         display: flex;
         flex-direction: column;
@@ -265,9 +268,10 @@ header {
         cursor: pointer;
         background: #cb5454; }
     #order-container #order-list .hide-options {
-      height: 60px; }
+      min-height: 60px; }
       #order-container #order-list .hide-options .order-options {
-        display: none; }
+        max-height: 0;
+        overflow: none; }
   #order-container #order-tax {
     background: #312b2c;
     box-sizing: border-box;
