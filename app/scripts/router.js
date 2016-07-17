@@ -19,7 +19,6 @@ const Router = Backbone.Router.extend({
     '/*'    : 'menuView'
   },
   menuView: function() {
-    console.log('rendering menu');
     let $header = renderHeader('login')
 
     let $menu = renderMenuView()

@@ -77,12 +77,9 @@ header {
         display: flex; }
         .menu-cat .menu-items-container .menu-item .top .wrapper button {
           margin-left: 20px;
-          background: #bc3a3a;
           width: 60px;
           border: none;
           color: #fff; }
-          .menu-cat .menu-items-container .menu-item .top .wrapper button:hover {
-            background: #a83434; }
     .menu-cat .menu-items-container .menu-item .bottom {
       max-height: 400px;
       display: flex;

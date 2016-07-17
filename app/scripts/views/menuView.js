@@ -75,7 +75,7 @@ function renderMenuView() {
         // console.log(item);
         if (item.description !== '') {
           $menuLi.on('click', (e) => {
-            if ($(e.target)[0] === $menuLi.find('.top')[0] || $(e.target)[0] === $menuLi.find('.bottom')[0] || $(e.target)[0] === $menuLi.find('.menu-item-title')[0]) {
+            if ($(e.target)[0] !== $menuLi.find('.add-to-order')[0]){
               $menuLi.find('.bottom').toggleClass('hidden')
             }
           })

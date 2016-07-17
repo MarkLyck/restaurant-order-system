@@ -52,13 +52,9 @@
           display: flex;
           button {
             margin-left: 20px;
-            background: darken($primary-color, 5%);
             width: 60px;
             border: none;
             color: #fff;
-            &:hover {
-              background: darken($primary-color, 10%);
-            }
           }
         }
       }
