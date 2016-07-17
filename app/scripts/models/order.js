@@ -1,5 +1,7 @@
-import Backbone from 'backbone'
+import $ from 'jquery'
 import _ from 'underscore'
+import Backbone from 'backbone'
+
 import orderCollection from '../collections/orderCollection'
 
 const orderAPI = 'https://tiny-za-server.herokuapp.com/collections/mlyck-orders3/'
@@ -24,6 +26,13 @@ Order.prototype.addItem = function(item) {
   this.calcTax()
   this.calcTotal()
   this.trigger('updateOrderList')
+  console.log(this.get('items').length);
+  if (this.get('items').length > 6) {
+    $('#order-container').css({
+        position: 'static',
+        width: '25%'
+    });
+  }
 }
 
 Order.prototype.removeItem = function(item, i) {

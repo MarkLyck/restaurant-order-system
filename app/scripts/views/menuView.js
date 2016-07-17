@@ -18,7 +18,6 @@ function renderMenuView() {
     </div>
     `)
 
-
   let $menuList = $menu.find('#menu-list')
 
   $.ajax(restaurantAPI).then(response => {
@@ -72,7 +71,6 @@ function renderMenuView() {
           store.sessionOrder.calcTotal()
         })
 
-        // console.log(item);
         if (item.description !== '') {
           $menuLi.on('click', (e) => {
             if ($(e.target)[0] !== $menuLi.find('.add-to-order')[0]){
