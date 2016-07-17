@@ -8,6 +8,8 @@ import store from '../sessionOrder'
 
 
 function renderOrderView() {
+  console.log('RENDDERING ORDER VIEW');
+  console.log(store.sessionOrder);
   let $orderView = $(`
       <h2>Your order</h2>
       <ul id="order-list">

@@ -28,8 +28,8 @@ function renderConfirmation() {
   `)
   $confirmationView.filter('.modal-container').on('click', (e) => {
     if ($(e.target)[0] === $confirmationView.filter('.modal-container')[0]) {
-      router.navigate('menu', {trigger: true})
       store.sessionOrder = new Order()
+      router.navigate('menu', {trigger: true})
     }
   })
 
@@ -45,6 +45,7 @@ function renderConfirmation() {
 
 
   $confirmationView.find('#return-to-menu').on('click', () => {
+    store.sessionOrder = new Order()
     router.navigate('menu',{trigger: true})
   })
 

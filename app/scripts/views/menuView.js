@@ -83,10 +83,11 @@ function renderMenuView() {
       })
     })
   })
-  let $orderView = renderOrderView(store.sessionOrder)
+  let $orderView = renderOrderView()
   $menu.find('#order-container').empty().append($orderView)
+
   store.sessionOrder.on('updateOrderList', function() {
-    let $orderView = renderOrderView(store.sessionOrder)
+    $orderView = renderOrderView()
     $menu.find('#order-container').empty().append($orderView)
   })
 

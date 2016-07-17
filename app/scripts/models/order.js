@@ -67,4 +67,8 @@ Order.prototype.removeOption = function(optionName, optionValue, i) {
   this.set('items', newItems)
 }
 
+// Order.protype.newOrder() = function() {
+//   this = new Order()
+// }
+
 export default Order
