@@ -61,8 +61,6 @@ Order.prototype.setOption = function(optionName, optionValue, i) {
   let newItems = this.get('items')
   newItems[i].options[optionName] = optionValue
   this.set('items', newItems)
-
-  // this.set('items'[i][optionName], value)
 }
 
 Order.prototype.removeOption = function(optionName, optionValue, i) {
@@ -75,9 +73,5 @@ Order.prototype.removeOption = function(optionName, optionValue, i) {
   console.log(newItems);
   this.set('items', newItems)
 }
-
-// Order.protype.newOrder() = function() {
-//   this = new Order()
-// }
 
 export default Order

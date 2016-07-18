@@ -1,4 +1,5 @@
 import $ from 'jquery'
+// import $ from 'jquery-ui'
 import router from '../router'
 
 let adminUserName = 'admin'
