@@ -4,7 +4,9 @@ Made with JS, jQuery and Backbone
 Live site: [https://marklyck.github.io/restaurant-order-system/]https://marklyck.github.io/restaurant-order-system/
 
 The login credentials for the restaurant area are:
+
 Username: admin
+
 Password: password
 
 Menu page:
